@@ -8,4 +8,4 @@ if last_number > 5:
 elif last_number < 6 and last_number != 0:
     print(f"{first_string} and is less than 6 and not 0")
 else:
-    print(f"{first_string} and is zero")
+    print(f"{first_string} and is 0")
