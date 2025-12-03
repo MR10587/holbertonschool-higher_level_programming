@@ -2,4 +2,4 @@
 def print_list_integer(my_list=[]):
     for i in my_list:
         if type(i) is int:
-            print(i)
+            print(i.format(i))
