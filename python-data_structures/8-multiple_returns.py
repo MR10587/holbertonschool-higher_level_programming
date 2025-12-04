@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-sentence = ''
 def multiple_returns(sentence):
     length = len(sentence)
     if length != 0:
