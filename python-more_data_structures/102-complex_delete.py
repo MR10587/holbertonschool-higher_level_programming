@@ -5,4 +5,3 @@ def complex_delete(a_dictionary, value):
             del a_dictionary[i]
     return a_dictionary
 print(complex_delete({'lang': "C", 'track': "Low", 'pref': "C", 'ids': [1, 2, 3]}, 'C'))
-
