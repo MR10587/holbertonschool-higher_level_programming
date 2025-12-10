@@ -5,4 +5,4 @@ def complex_delete(a_dictionary, value):
         if a_dictionary[i] != value:
             b_dictionary[i] = a_dictionary[i]
     a_dictionary = b_dictionary
-    print(b_dictionary)
+    return b_dictionary
