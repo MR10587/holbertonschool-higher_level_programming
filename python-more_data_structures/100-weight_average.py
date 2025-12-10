@@ -9,12 +9,12 @@ def weight_average(my_list=[]):
             weight.append(i[1])
         # result = (score + weight) / weight
         weight_sum = 0
-        for i in weight:
-            weight_sum +=i
-        score_weight = list(map(lambda x,y: x+y, score, weight))
+        for a in weight:
+            weight_sum +=a
+        score_weight = list(map(lambda x,y: x*y, score, weight))
         score1 = 0
-        for i in score_weight:
-            score1 +=i
+        for b in score_weight:
+            score1 +=b
         result = score1 / weight_sum
         return result
     else:
