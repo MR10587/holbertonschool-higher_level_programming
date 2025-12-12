@@ -9,4 +9,3 @@ def safe_print_list(my_list=[], x=0):
     print()
     return i + 1
     print()
-print(safe_print_list([1,2,3,4], 2))
