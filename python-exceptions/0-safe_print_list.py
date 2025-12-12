@@ -2,11 +2,13 @@
 def safe_print_list(my_list=[], x=0):
     if x <= 0:
         return 0
+    y = 0
     for i in range(0, x):
         try:
             print(my_list[i], end='')
+            y += 1
         except:
             print()
             break
     print()
-    return i + 1
+    return y
