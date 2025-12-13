@@ -8,5 +8,3 @@ def safe_print_integer_err(value):
     except (TypeError, ValueError):
         sys.stderr.write('Error')
         return False
-
-safe_print_integer_err('h')
