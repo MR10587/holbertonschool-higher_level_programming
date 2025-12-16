@@ -9,7 +9,7 @@ class Square:
         python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         self.__size = size
-        if type(size) is not int:
+        if type(self.__size) is not int:
             raise TypeError('size must be an integer')
-        elif size < 0:
+        elif self.__size < 0:
             raise ValueError('size must be >= 0')
