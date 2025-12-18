@@ -49,5 +49,5 @@ class Square:
                 print()
             for i in range(1, self.__size + 1):
                 for k in range(0, self.__position[0]):
-                    print('_', end='')
+                    print(' ', end='')
                 print('#' * self.__size)
