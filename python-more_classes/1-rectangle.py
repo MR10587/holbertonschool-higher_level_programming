@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+"""python3 -c 'print(__import__("my_module").__doc__)"""
+
+
+class Rectangle:
+    """python3 -c 'print(__import__("my_module").MyClass.__doc__)"""
+    def __init__(self, width=0, height=0):
+        """python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+        """
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        return self.width
+
+    @width.setter
+    def width(self, value):
+        if type(value) is not int:
+            raise TypeError('width must be an integer')
+        elif value < 0:
+            raise ValueError('width must be >= 0')
+        else:
+            self.width = value
+
+    @property
+    def height(self):
+        return self.height
+
+    @height.setter
+    def height(self, value):
+        if type(value) is not int:
+            raise TypeError('height must be an integer')
+        elif value < 0:
+            raise ValueError('height must be >= 0')
+        else:
+            self.height = value
