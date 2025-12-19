@@ -53,4 +53,4 @@ class Rectangle:
         rectangle1 = []
         for i in range(0, self.__height):
             rectangle1.append('#' * self.__width)
-        return rectangle1
+        return x for x in rectangle1
