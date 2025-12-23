@@ -6,6 +6,6 @@ def inherits_from(obj, a_class):
     '''python3 -c 'print(__import__("my_module").my_function.__doc__)'
     python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
     '''
-    if issubclass(obj.__class__, a_class):
+    if issubclass(obj.__class__, a_class) and type(obj) is not a_class:
         return True
     return False
