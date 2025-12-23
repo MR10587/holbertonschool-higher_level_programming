@@ -6,4 +6,4 @@ True
 0
 >>> str(m)
 '[]'
->>> m.append()
+>>> m.append(1)
