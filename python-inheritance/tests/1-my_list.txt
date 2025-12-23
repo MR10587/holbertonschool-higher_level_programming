@@ -5,4 +5,4 @@ True
 >>> len(m)
 0
 >>> str(m)
-[]
+m
