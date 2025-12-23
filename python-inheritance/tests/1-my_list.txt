@@ -6,3 +6,15 @@ True
 0
 >>> str(m)
 '[]'
+>>>m = MyList()
+    m.append(1)
+    m.append(4)
+    m.append(2)
+    m.append(3)
+    m.append(5)
+    print(m)
+    m.print_sorted()
+    print(m)
+[1, 4, 2, 3, 5]
+[1, 2, 3, 4, 5]
+[1, 4, 2, 3, 5]
