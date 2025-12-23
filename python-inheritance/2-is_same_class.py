@@ -6,8 +6,6 @@ def is_same_class(obj, a_class):
     '''python3 -c 'print(__import__("my_module").my_function.__doc__)'
     python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
     '''
-    if obj is not True and obj is not False and obj is not None:
-        if isinstance(obj, a_class):
-            return True
-        return False
+    if obj.__class__.__name__ == obj:
+        return True
     return False
