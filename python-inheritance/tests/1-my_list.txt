@@ -7,3 +7,5 @@ True
 >>> str(m)
 '[]'
 >>> m.append(1)
+>>> str(m)
+['1']
