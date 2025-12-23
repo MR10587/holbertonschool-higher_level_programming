@@ -12,11 +12,11 @@ True
 >>> m.append(1)
 >>> m.append(2)
 >>> m.append(3)
->>> print_sorted()
+>>> m.print_sorted()
 '[1, 2, 3]'
 >>> m.append(3)
 >>> m.append(2)
 >>> m.append(1)
->>> print_sorted()
+>>> m.print_sorted()
 '[1, 2, 3]'
 
