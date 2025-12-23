@@ -4,6 +4,6 @@
 True
 >>> len(m)
 0
->>> str(m)
+>>> str(MyList)
 []
 >>> 
