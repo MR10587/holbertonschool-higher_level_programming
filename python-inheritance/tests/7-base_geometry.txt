@@ -48,7 +48,7 @@ True
 ...     bg.integer_validator("age", True)
 ... except TypeError as e:
 ...     print(1)
-1
+
 >>> try:
 ...     bg.integer_validator("age", {3,4})
 ... except TypeError as e:
