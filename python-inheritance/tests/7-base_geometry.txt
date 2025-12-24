@@ -59,4 +59,3 @@ True
 ... except TypeError as e:
 ...     print(1)
 1
->>> 
