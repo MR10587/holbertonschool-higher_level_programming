@@ -4,3 +4,6 @@
 
 >>> isinstance(bg, BaseGeometry)
 True
+
+>>> bg.area()
+True
