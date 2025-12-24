@@ -1,15 +1,15 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
-
 >>> isinstance(bg, BaseGeometry)
 True
 
->>> try: 
-...   bg.area()
+>>> try:
+...     bg.area()
 ... except Exception as e:
 ...     print(1)
 1
+
 >>> try:
 ...     bg.integer_validator()
 ... except TypeError as e:
@@ -59,3 +59,4 @@ True
 ... except TypeError as e:
 ...     print(1)
 1
+>>> 
