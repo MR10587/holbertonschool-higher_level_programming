@@ -6,7 +6,7 @@ class Shape(ABC):
     @abstractmethod
     def area(self):
         pass
-    
+
     @abstractmethod
     def perimeter(self):
         pass
@@ -22,22 +22,19 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * 3.14 * self.radius
 
+
 class Rectangle(Shape):
     def __init__(self, width, length):
         self.width = width
         self.length = length
-    
+
     def area(self):
         return self.width * self.length
-    
+
     def perimeter(self):
         return 2 * (self.width + self.length)
 
-def shape_info(fiqur):
-    fiqur = Shape()
-    print(fiqur.area)
-    print(fiqur.perimeter)
 
-if __name__ == "__main__":
-    shape_info(Circle)
-    shape_info(Rectangle)
+def shape_info(fiqur):
+    print(fiqur.area())
+    print(fiqur.perimeter())
