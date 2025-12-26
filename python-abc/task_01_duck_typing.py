@@ -20,7 +20,7 @@ class Circle(Shape):
         return 3.14159265359 * (self.radius ** 2)
 
     def perimeter(self):
-        return 2 * 3.14159265359 * self.radius
+        return 2 * 3.14159265359 * abs(self.radius)
 
 
 class Rectangle(Shape):
