@@ -38,9 +38,3 @@ class Rectangle(Shape):
 def shape_info(fiqur):
     print(fiqur.area())
     print(fiqur.perimeter())
-
-
-circle = Circle(5)
-rectangle = Rectangle(5, 6)
-shape_info(circle)
-shape_info(rectangle)
