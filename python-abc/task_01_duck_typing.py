@@ -24,15 +24,15 @@ class Circle(Shape):
 
 
 class Rectangle(Shape):
-    def __init__(self, width, length):
+    def __init__(self, width, height):
         self.width = width
-        self.length = length
+        self.height = height
 
     def area(self):
-        return self.width * self.length
+        return self.width * self.height
 
     def perimeter(self):
-        return 2 * (self.width + self.length)
+        return 2 * (self.width + self.height)
 
 
 def shape_info(fiqur):
