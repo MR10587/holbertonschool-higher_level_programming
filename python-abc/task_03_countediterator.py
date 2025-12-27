@@ -12,14 +12,3 @@ class CountedIterator:
         self.counter += 1
         item = next(self.iterator)
         return item
-
-
-data = [4, 3, 2, 1]
-counted_iter = CountedIterator(data)
-
-try:
-    while True:
-        item = next(counted_iter)
-        print(f"Got {item}, total {counted_iter.get_count()} items iterated.")
-except StopIteration:
-    print("No more items.")
