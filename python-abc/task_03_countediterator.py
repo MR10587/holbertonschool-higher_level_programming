@@ -9,12 +9,12 @@ class CountedIterator:
         return self.counter
 
     def __next__(self):
-        self.counter += 1
         item = next(self.iterator)
+        self.counter += 1
         return item
 
 
-data = [1, 2, 3, 4]
+data = [1, 2, 3, 4,5]
 counted_iter = CountedIterator(data)
 
 try:
