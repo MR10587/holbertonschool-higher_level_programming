@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 class CountedIterator:
 
-    def __init__(self, iterator, counter=0):
+    def __init__(self, iterator):
         self.iterator = iter(iterator)
-        self.counter = counter
+        self.counter = 0
 
     def get_count(self):
         return self.counter
