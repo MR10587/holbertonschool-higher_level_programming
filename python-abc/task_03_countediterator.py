@@ -11,9 +11,7 @@ class CountedIterator:
     def __next__(self):
         self.counter += 1
         item = next(self.iterator)
-        if item in data:
-            return item
-        raise StopIteration
+        return item
 
 
 data = [4, 3, 2, 1]
