@@ -5,4 +5,5 @@
 def read_file(filename=""):
     """Reading File"""
     with open(filename, 'r', encoding='utf-8') as f:
-        print(f.read().strip())
+        for line in f:
+            print(line.rstrip())
