@@ -7,8 +7,5 @@ import json
 
 def load_from_json_file(filename):
     """Sagol"""
-    with open(filename, 'a', encoding='utf-8') as f:
-        for line in f:
-            filename.write(json.loads(line))
-            
-        return filename
+    with open(filename, "r", encoding='utf-8') as f:
+        return json.load(f)
