@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""Salam"""
 import sys
 import json
-"""Salam"""
 
 
 save = __import__('5-save_to_json_file').save_to_json_file
