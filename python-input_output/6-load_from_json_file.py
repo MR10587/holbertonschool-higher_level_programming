@@ -8,4 +8,4 @@ import json
 def load_from_json_file(filename):
     """Sagol"""
     with open(filename, 'w', encoding='utf-8') as f:
-        json.load(filename)
+        return json.load(filename)
