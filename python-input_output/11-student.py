@@ -21,6 +21,6 @@ class Student:
         return vars(self)
 
     def reload_from_json(self, json):
-        json[first_name] = self.first_name
-        json[last_name] = self.last_name
-        json[age] = self.age
+        json[0] = self.first_name
+        json[1] = self.last_name
+        json[2] = self.age
