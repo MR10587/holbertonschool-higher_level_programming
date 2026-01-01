@@ -3,7 +3,14 @@
 
 
 def pascal_triangle(n):
+    """HP"""
     lists = [[1], [1, 1]]
+    if n == 0:
+        return []
+    if n == 1:
+        return [[1]]
+    elif n == 2:
+        return lists
     for i in range(2, n):
         new_list = []
         new_list.append(1)
