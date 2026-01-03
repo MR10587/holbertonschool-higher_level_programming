@@ -24,5 +24,5 @@ class CustomObject:
             with open(filename, 'rb') as f:
                 return pickle.load(f)
                 
-        except (FileNotFoundError, UnicodeDecodeError) and not '.pck' in filename:
+        except (FileNotFoundError, EOFError):
             return None
