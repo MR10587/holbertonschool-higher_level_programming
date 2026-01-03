@@ -22,7 +22,7 @@ class CustomObject:
     def deserialize(cls, filename):
         try:
             with open(filename, 'rb') as f:
-                salam = pickle.load(f)
-                return salam
+                return pickle.load(cls, f)
+                
         except (FileNotFoundError, UnicodeDecodeError):
             return None
