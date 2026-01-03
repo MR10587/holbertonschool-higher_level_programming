@@ -8,7 +8,7 @@ class CustomObject:
         self.age = age
         self.is_student = is_student
 
-    def display():
+    def display(self):
         print(f'Name: {self.__name}\nAge: {self.__age}\nIs Student: {self.__is_student}')
 
     def serialize(self, filename):
