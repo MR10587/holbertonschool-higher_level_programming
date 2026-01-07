@@ -18,7 +18,7 @@ def fetch_and_print_posts():
 
 def fetch_and_save_posts():
     a = requests.get(url)
-
+    print(f'Status code: {a.status_code}')
     if a.status_code == 200:
         j = a.json()
         new_post = []
