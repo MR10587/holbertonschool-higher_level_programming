@@ -8,9 +8,9 @@ url = 'https://jsonplaceholder.typicode.com/posts'
 
 def fetch_and_print_posts():
     a = requests.get(url)
+    print(f"Status code: {a.status_code}")
 
     if a.status_code == 200:
-        print(f"Status code: {a.status_code}")
         j = a.json()
         for title in j:
             print(title["title"])
@@ -28,7 +28,7 @@ def fetch_and_save_posts():
                 "title": post["title"],
                 "body": post["body"]
             })
-        with open(posts.csv, 'w', newline='', encoding='utf-8') as f:
+        with open("posts.csv", 'w', newline='', encoding='utf-8') as f:
             new_file = csv.DictWriter(
                 f,
                 fieldnames=["id", "title", "body"]
