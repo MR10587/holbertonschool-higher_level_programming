@@ -6,7 +6,7 @@ dictionary = {"name": "John", "age": 30, "city": "New York"}
 json_sample = json.dumps(dictionary)
 
 
-class Handler(http.server.SimpleHTTPRequestHandler):
+class Handler(SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
             self.send_response(200)
