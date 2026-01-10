@@ -21,13 +21,13 @@ def user(username):
     try:
         return escape(username)
     except Exception:
-        return jsoninfy("400 error:Invalid JSON")
+        return jsonify("400 error:Invalid JSON")
 
 @app.route('/add_user/<username>', methods=['GET', 'POST'])
 def login(data):
     if request.method == 'POST':
         if username:
-            return jsoninf("409 error:Username already exists")
+            return jsonify("409 error:Username already exists")
         try:
             text = request.get_json(data)
             username = text['username']
