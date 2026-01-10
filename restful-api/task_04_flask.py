@@ -26,24 +26,15 @@ def account(username):
 
 @app.route('/add_user', methods=['POST'])
 def new_user():
-    if request.method == 'POST':
-        data = request.get_json()
-        if data is None:
-            return jsonify({"error":"Invalid JSON"}), 400
-        
-        if not data:
-            return jsonify({"error":"Invalid JSON"}), 400
+    data = request.to_json()
+    if data is None:
+        return jsonify({"error":"Invalid JSON"}), 400
+    if not username:
+        return jsonify({"error":"Username is required"}), 400
+    if username in users:
+        return jsonify({"error":"Username already exists"}), 409
 
-        username = data.get('username')
-        if not username:
-            return jsonify({"error":"Username is required"}), 400
-
-        if username in users:
-            return jsonify({"error":"Username already exists"}), 409
-
-        users[username] = data
-        return jsonify({"message": "User added successfully", "user": data}), 201
-
-
+    users[username] = data
+    return 'User added'
 if __name__ == "__main__":
     app.run()
