@@ -36,5 +36,6 @@ def new_user():
 
     users[username] = data
     return 'User added'
+
 if __name__ == "__main__":
     app.run()
