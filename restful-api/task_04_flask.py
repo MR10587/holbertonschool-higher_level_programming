@@ -40,6 +40,8 @@ def new_user():
             return jsonify({"error":"Username already exists"}), 409
         
         users[username] = data
+        return jsonify({"message": "User added successfully", "user": data}), 201
+
 
 if __name__ == "__main__":
     app.run()
