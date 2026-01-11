@@ -52,11 +52,12 @@ def jwt_protected():
 
 @app.route('/admin-only', methods=['GET'])
 @jwt_required()
-def admin():
+def admin_only():
     identity = get_jwt_identity()
     if users[identity]["role"] != "admin":
-        return "Forbidden", 403
-    return "Admin Access Granted", 200
+        return jsonify({"error": "Admin access required"}), 403
+    return jsonify({"msg": "Admin Access Granted"}), 200
+
 
 @jwt.invalid_token_loader
 def invalid_token_callback(error):
