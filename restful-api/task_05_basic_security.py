@@ -23,7 +23,7 @@ users = {
 
 @auth.verify_password
 def verify_password(username, password):
-    if username in users and check_password_hash(users.get(username), password):
+    if username in users and check_password_hash(users[username]['password'], password):
         return username
 
 @app.route('/basic-protected', methods=['GET'])
@@ -35,7 +35,9 @@ def index():
 def login():
     username = request.json.get("username", None)
     password = request.json.get("password", None)
-    if username not in users or password != users.get(username):
+    
+    user = users.get(username)
+    if not user or not check_password_hash(user['password'], password):
         return jsonify({"msg": "Wrong username or password"}), 401
     
     access_token = create_access_token(identity=username)
@@ -48,8 +50,8 @@ def protected():
     return jsonify(logged_in_as=current_user), 200
 
 @auth.get_user_roles
-def get_user_roles(user):
-    return user.get_roles()
+def get_user_roles(username):
+    return users[username]["role"]
 
 @app.route('/admin')
 @auth.login_required(role='admin')
