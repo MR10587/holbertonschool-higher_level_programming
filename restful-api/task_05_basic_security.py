@@ -66,10 +66,14 @@ def expired_token_callback(jwt_header, jwt_payload):
 def get_user_roles(username):
     return users[username]["role"]
 
-@app.route('/admin')
-@auth.login_required(role='admin')
-def admin_entry():
-    return f"Hello {auth.current_user()}, you are an admin"
+@app.route('/admin', methods=['GET'])
+@jwt_required()
+def admin():
+    identity = get_jwt_identity()
+    if users[identity]["role"] != "admin":
+        return "Forbidden", 403
+    return "Admin Access Granted", 200
+
 
 @app.route('/user')
 @auth.login_required(role='user')
