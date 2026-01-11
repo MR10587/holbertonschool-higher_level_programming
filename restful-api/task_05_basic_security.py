@@ -50,6 +50,18 @@ def login():
 def protected():
     return "JWT Auth: Access Granted", 200
 
+@jwt.invalid_token_loader
+def invalid_token_callback(error):
+    return "Invalid token", 401
+
+@jwt.unauthorized_loader
+def missing_token_callback(error):
+    return "Missing token", 401
+
+@jwt.expired_token_loader
+def expired_token_callback(jwt_header, jwt_payload):
+    return "Token expired", 401
+
 @auth.get_user_roles
 def get_user_roles(username):
     return users[username]["role"]
