@@ -45,7 +45,7 @@ def login():
     access_token = create_access_token(identity=username)
     return jsonify(access_token=access_token)
 
-@app.route('/protected', methods=['GET'])
+@app.route('/jwt-protected', methods=['GET'])
 @jwt_required()
 def protected():
     current_user = get_jwt_identity()
