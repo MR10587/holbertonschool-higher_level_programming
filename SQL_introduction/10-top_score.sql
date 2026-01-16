@@ -1,0 +1,3 @@
+-- TOP SCORE
+SELECT * FROM second_table
+ORDER BY SCORE DESC;
