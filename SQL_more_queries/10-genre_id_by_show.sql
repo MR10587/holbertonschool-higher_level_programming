@@ -1,5 +1,5 @@
 -- GENRE ID
 SELECT s.title, g.genre_id
 FROM tv_shows s
-JOIN tv_show_genres g
+JOIN tv_show_genres g ON s.id = g.show_id
 ORDER BY s.title, g.genre_id;
