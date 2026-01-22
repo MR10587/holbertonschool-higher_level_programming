@@ -1,6 +1,6 @@
 -- NO GENRE
 SELECT s.title, g.genre_id
 FROM tv_shows s
-RIGHT JOIN tv_show_genres g
-ON g.genre_id IS Null
+LEFT JOIN tv_show_genres g
+WHERE g.genre_id IS NULL
 ORDER BY s.title, g.genre_id;
