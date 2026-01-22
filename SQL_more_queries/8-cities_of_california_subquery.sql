@@ -1,7 +1,7 @@
 -- CITIES OF CALIFORNIA
 SELECT * FROM cities
-WHERE states_id = (
+WHERE cities.state_id = (
     SELECT id
-    FROM cities
+    FROM states
     WHERE name='California'
 );
