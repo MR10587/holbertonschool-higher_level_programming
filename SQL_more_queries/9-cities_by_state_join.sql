@@ -1,4 +1,5 @@
 -- CITIES BY STATE JOIN
-SELECT id, name 
+SELECT cities.id, cities.name 
 FROM cities
-NATURAL JOIN states.name;
+JOIN states
+ON states.id = cities.id;
