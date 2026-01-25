@@ -9,11 +9,11 @@ if __name__ == "__main__":
         host='localhost', user=sys.argv[1],
         password=sys.argv[2], database=sys.argv[3], port=3306
         )
-    cs = db.cursor
+    cs = db.cursor()
     cs.execute(
         "SELECT * FROM cities ORDER BY id ASC"
     )
-    rows = cs.fetchall
+    rows = cs.fetchall()
     for row in rows:
         print(row)
 
