@@ -13,7 +13,7 @@ if __name__ == "__main__":
     cs = db.cursor()
     cs.execute(
         "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC",
-        ("%N%",)
+        ("N%",)
     )
     rows = cs.fetchall()
     for row in rows:
