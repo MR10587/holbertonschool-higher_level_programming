@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     cs = db.cursor()
     cs.execute(
-        "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC",
+        "SELECT * FROM states WHERE BINARY name LIKE %s ORDER BY id ASC",
         ("N%",)
     )
     rows = cs.fetchall()
