@@ -11,12 +11,13 @@ if __name__ == "__main__":
         )
 
     cs = db.cursor()
-    cs.execute("SELECT * FROM states WHERE name LIKE %N ORDER BY id ASC")
+    cs.execute(
+        "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC",
+        ("%N%",)
+    )
     rows = cs.fetchall()
     for row in rows:
         print(row)
 
     cs.close()
     db.close()
-
-
