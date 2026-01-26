@@ -19,8 +19,7 @@ if __name__ == "__main__":
         (sys.argv[4],)
     )
     rows = cs.fetchall()
-    for row in rows:
-        print(row)
+    print(rows)
 
     cs.close()
     db.close()
