@@ -1,18 +1,20 @@
 #!/usr/bin/node
 const nmbr = process.argv.length - 2;
 
-if (!nmbr || nmbr === 1) {
+if (nmbr < 2) {
   console.log(0);
 } else {
   let max = -Infinity;
   let secMax = -Infinity;
 
-  for (let i = 2; i <= process.argv.length; i++) {
-    if (process.argv[i] > max) {
+  for (let i = 2; i < process.argv.length; i++) {
+    const n = Number(process.argv[i]);
+
+    if (n > max) {
       secMax = max;
-      max = process.argv[i];
-    } else if (process.argv[i] > secMax && process.argv[i] != max) {
-      secMax = process.argv[i];
+      max = n;
+    } else if (n > secMax && n < max) {
+      secMax = n;
     }
   }
 
