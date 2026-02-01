@@ -14,3 +14,5 @@ function factorial () {
     console.log(proc);
   }
 }
+
+factorial();
