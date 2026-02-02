@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 function add (a, b) {
-    console.log(Number(a) + Number(b));
+    return a + b;
   }
-  
-export default add;
+module.exports.add = add;
