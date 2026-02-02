@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-function add(a, b) {
+function add (a, b) {
     console.log(Number(a) + Number(b));
-}
-
-module.exports = add;
+  }
+  
+export default add;
