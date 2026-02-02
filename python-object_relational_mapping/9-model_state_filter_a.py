@@ -18,3 +18,5 @@ if __name__ == "__main__":
             order_by(State.id).all()))
     for i in state:
         print(f"{i.id}: {i.name}")
+
+    session.close()
