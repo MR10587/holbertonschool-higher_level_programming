@@ -14,8 +14,8 @@ if __name__ == "__main__":
 
     session = Session(engine)
     state = (session.query(State).
-            filter(State.name.ilike("%a%").
-            order_by(State.id).all()))
+            filter(State.name.ilike("%a%")).
+            order_by(State.id).all())
     for i in state:
         print(f"{i.id}: {i.name}")
 
