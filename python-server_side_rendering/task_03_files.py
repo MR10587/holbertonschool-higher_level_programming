@@ -16,17 +16,20 @@ def products():
     id = request.args.get('id',type=int)
 
     # Validate source
-    if source == 'json':
-        with open('products.json') as f:
-            products = json.load(f)
-    elif source == 'csv':
-        with open('products.csv') as f:
-            products = list(csv.DictReader(f))
-    else:
-        return "Wrong source", 400
+    try:
+        if source == 'json':
+            with open('products.json') as f:
+                products = json.load(f)
+        elif source == 'csv':
+            with open('products.csv') as f:
+                products = list(csv.DictReader(f))
+        else:
+            return "Wrong source"
+    except FileNotFoundError:
+        return "Data file not found"
     
     # Validate ID
-    if id:
+    if id is not None:
         if 1 <= id <= len(products):
             products = [products[id - 1]]
         else:
