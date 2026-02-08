@@ -17,17 +17,17 @@ def products():
             with open('products.csv', encoding='utf-8') as f:
                 products = list(csv.DictReader(f))
         else:
-            return "Wrong source", 400
+            return "Wrong source"
     except FileNotFoundError:
-        return "Data file not found", 500
+        return "Data file not found"
     except json.JSONDecodeError:
-        return "Invalid JSON format", 500
+        return "Invalid JSON format"
 
     if product_id is not None:
         if 1 <= product_id <= len(products):
             products = [products[product_id - 1]]
         else:
-            return "Product not found", 404
+            return "Product not found"
 
     return render_template('product_display.html', products=products)
 
