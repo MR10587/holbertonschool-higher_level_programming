@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 # Importing necessary modules and functions
 from flask import Flask, render_template, request
 import json
