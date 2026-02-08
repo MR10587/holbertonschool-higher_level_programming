@@ -1,0 +1,16 @@
+<table>
+    {% if products}
+        {% for product in products}
+            <th>Name</th>
+            <td>{{ product.name }}</td>
+
+            <th>Category</th>
+            <td>{{ product.category }}</td>
+
+            <th>Price</th>
+            <td>{{ product.price }}</td>
+        {% endfor %}
+    {% else %}
+        <p>No products found</p>
+    {% endif %}
+</table>
