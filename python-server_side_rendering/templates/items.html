@@ -1,0 +1,14 @@
+<head>
+    <title>Items List</title>
+</head>
+<body>
+    <ul>
+        {% for item in items %}
+            {% if item %}
+                <li>{{ item }}</li>
+            {% else %}
+                <p>List is empty</p>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
