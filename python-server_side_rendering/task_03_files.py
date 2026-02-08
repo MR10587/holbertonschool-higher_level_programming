@@ -9,6 +9,8 @@ def products():
     source = request.args.get('source')
     product_id = request.args.get('id', type=int)
 
+    error = None  
+
     try:
         if source == 'json':
             with open('products.json', encoding='utf-8') as f:
@@ -17,19 +19,34 @@ def products():
             with open('products.csv', encoding='utf-8') as f:
                 products = list(csv.DictReader(f))
         else:
-            return "Wrong source"
+            error = "Wrong source"     
+            products = []           
     except FileNotFoundError:
-        return "Data file not found"
+        error = "Data file not found"
+        products = []
     except json.JSONDecodeError:
-        return "Invalid JSON format"
+        error = "Invalid JSON format" 
+        products = []
 
-    if product_id is not None:
-        if 1 <= product_id <= len(products):
-            products = [products[product_id - 1]]
+    # CHANGED: filter by actual product["id"]
+    if error is None and product_id is not None:
+        found = None
+        for p in products:
+            try:
+                if int(p.get("id")) == product_id:
+                    found = p
+                    break
+            except (TypeError, ValueError):
+                continue
+
+        if found:
+            products = [found]
         else:
-            return "Product not found"
+            error = "Product not found"
+            products = []
 
-    return render_template('product_display.html', products=products)
+    return render_template('product_display.html', products=products, error=error)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False, use_reloader=False)
