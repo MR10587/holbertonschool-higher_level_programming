@@ -2,13 +2,13 @@
     <title>Items List</title>
 </head>
 <body>
-    <ul>
-        {% for item in items %}
-            {% if item %}
+    {% if items %}
+        <ul>
+            {% for item in items %}
                 <li>{{ item }}</li>
-            {% else %}
-                <p>List is empty</p>
-            {% endif %}
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>List is empty</p>
+    {% endif %}
 </body>

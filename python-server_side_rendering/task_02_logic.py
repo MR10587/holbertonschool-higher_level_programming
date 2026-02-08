@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+
 from flask import Flask, render_template
 import json
 
@@ -20,10 +20,10 @@ def contact():
 def items():
     items = []
     with open('items.json', 'r') as f:
-            dicti = json.load(f)
-            for item in dicti.get("items"):
-                items.append(item)
-    return render_template('items.html')
+        dicti = json.load(f)
+        for item in dicti.get("items", []):
+            items.append(item)
+    return render_template('items.html', items=items)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
