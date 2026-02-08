@@ -27,6 +27,8 @@ def products():
             return "Wrong source"
     except FileNotFoundError:
         return "Data file not found"
+    except json.JSONDecodeError:
+        return "Invalid JSON format"
     
     # Validate ID
     if id is not None:
