@@ -23,8 +23,7 @@ def items():
             dicti = json.load(f)
             for item in dicti.get("items"):
                 items.append(item)
-    print(items)
-
+    return render_template('items.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
