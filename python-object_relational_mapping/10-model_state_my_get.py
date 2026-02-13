@@ -1,22 +1,33 @@
 #!/usr/bin/python3
-"""Model State"""
+"""
+List all State objects from the database
+"""
 
-import sys
-from sqlalchemy import create_engine, text
-from sqlalchemy.orm import Session
+from sys import argv
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 if __name__ == "__main__":
-    engine = create_engine(
-        "mysql+mysqldb://%s:%s@localhost/%s"
-        % (sys.argv[1], sys.argv[2], sys.argv[3])
+    usnm = argv[1]
+    pwd = argv[2]
+    db = argv[3]
+    name = argv[4]
+
+    engine = create_engine(f"mysql+mysqldb://{usnm}:{pwd}@localhost:3306/{db}")
+
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    states = (
+      session.query(State)
+      .filter(State.name == name)
+      .order_by(State.id)
+      .all()
     )
 
-    session = Session(engine)
-    state = session.query(State).filter(State.name == sys.argv[4]).order_by(State.id).all()
-    if state is None or len(state) == 0:
+    if not states:
         print("Not found")
     else:
-        for s in state:
-            print(s.id)
-    session.close()
+        for state in states:
+            print(state.id)
