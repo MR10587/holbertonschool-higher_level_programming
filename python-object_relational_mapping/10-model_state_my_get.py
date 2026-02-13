@@ -31,3 +31,4 @@ if __name__ == "__main__":
     else:
         for state in states:
             print(state.id)
+    session.close()
