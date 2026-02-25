@@ -21,7 +21,7 @@ def products():
                 products = list(csv.DictReader(f))
         elif source == 'sql':
             with sqlite3.connect('products.db') as conn:
-                cursor = conn.cursor()P
+                cursor = conn.cursor()
                 cursor.execute('SELECT name, category, price FROM Products')
 
                 products = cursor.fetchall()
