@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import json
 import csv
-from sqlalchemy import create_engine, text
+import sqlite3
 
 app = Flask(__name__)
 
@@ -20,10 +20,11 @@ def products():
             with open('products.csv', encoding='utf-8') as f:
                 products = list(csv.DictReader(f))
         elif source == 'sql':
-            engine = create_engine('sqlite:///products.db')
-            with engine.connect() as conn:
-                result = conn.execute(text("SELECT * FROM products"))
-                products = [dict(row) for row in result]
+            with sqlite3.connect('products.db') as conn:
+                cursor = conn.cursor()P
+                cursor.execute('SELECT name, category, price FROM Products')
+
+                products = cursor.fetchall()
         else:
             error = "Wrong source"     
             products = []           
