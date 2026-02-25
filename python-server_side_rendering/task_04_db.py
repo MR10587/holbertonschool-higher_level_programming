@@ -22,9 +22,10 @@ def products():
         elif source == 'sql':
             with sqlite3.connect('products.db') as conn:
                 cursor = conn.cursor()
-                cursor.execute('SELECT name, category, price FROM Products')
+                products = cursor.execute('SELECT name, category, price FROM Products')
+                products = products.fetchall()
 
-                products = cursor.fetchall()
+                
         else:
             error = "Wrong source"     
             products = []           
